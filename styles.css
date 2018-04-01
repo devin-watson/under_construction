@@ -1,0 +1,110 @@
+@keyframes wiggle {
+  0% {
+    transform: rotateX(0);
+  }
+
+  50% {
+    transform: rotateX(10deg);
+  }
+
+  70% {
+    transform: rotateX(-10deg);
+  }
+
+  100% {
+    transform: rotateX(0);
+  }
+}
+
+@keyframes flash {
+  0% {
+    color: #111;
+  }
+
+  50% {
+    color: #fff;
+  }
+
+  100% {
+    color: #111;
+  }
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: #DA727E;
+}
+
+.main {
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+
+.contactIcons {
+	position: fixed;
+}
+
+.contactIcons li {
+	list-style: none;
+	margin-bottom: 12px;
+}
+
+.contactIcons li:hover {
+	list-style: none;
+	margin-bottom: 12px;
+	-webkit-transform: rotateZ(-10deg);
+    -ms-transform: rotateZ(-10deg);
+    transform: rotateZ(-10deg);
+}
+
+.constructionWrapper,
+.chefWrapper,
+.riderWrapper,
+.pirateWrapper {
+	display: none;
+}
+
+.headWrapper {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.headImg {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.headImg img {
+	animation: wiggle;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+.mainText {
+	text-align: center;
+	font-size: 2em;
+	font-family: "Inconsolata";
+	text-transform: uppercase;
+	padding: 0 20px;
+}
+
+.flash {
+	animation: flash;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+@media screen and (max-width: 400px) {
+	.headImg {
+		margin-bottom: 20px;
+	}
+	.headImg img {
+		width: 100px;
+		animation: none;
+	}
+}
